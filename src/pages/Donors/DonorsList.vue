@@ -86,8 +86,7 @@ import {
                 { text: 'Necesidad asoc', value: 'need.contact', asAction:this.checkNeed  },
                 { text: 'Estado', value: 'state' },
                 { text: 'Opciones', type:'customActions', actions:[
-                    { title:"Transporte", action: this.traceTransport },
-                    { title:"Cancelar donación", action: this.cancelDonation }
+                    { title:"Transporte", action: this.traceTransport }
                 ]}                               
                        
             ];          
@@ -326,6 +325,9 @@ import {
 
         }
     };
+
+    /* ,
+                    { title:"Cancelar donación", action: this.cancelDonation } */
 </script>
 <style>
     .iconButtons{
