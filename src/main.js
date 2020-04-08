@@ -30,7 +30,7 @@ Vue.use(VueProgressBar);
 
 // You should use an absolute URL here
 const options = {
-  httpUri: process.env.VUE_GRAPHQL_HTTP_ENDPOINT || 'http://localhost:8008/graphql',
+  httpUri: process.env.VUE_GRAPHQL_HTTP_ENDPOINT || 'http://52.90.185.159:8008/',
   //wsUri:   process.env.GRAPHQL_WS_ENDPOINT  || 'ws://localhost:7001/graphql',
 };
 
