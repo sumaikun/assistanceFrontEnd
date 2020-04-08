@@ -12,32 +12,33 @@
 
       <v-col class="mb-4">
         <h1 class="display-2 font-weight-bold mb-3">
-          Bienvenido a ¡ Deseo ayudar !
+          ¡ Bienvenido a solidaridad Emáus !
         </h1>
-
-        <p class="subheading font-weight-regular" style="color:white">
-          Quieres realizar una donación
-          <br>Por favor ingresa a
-          <a
-            @click="clickMenu('DonationType')" 
-          >Este enlace</a>
-        </p>
-      </v-col>
 
       <v-col
         class="mb-5 user-link"
         cols="12"
       >
         <h2 class="headline font-weight-bold mb-3">
-          ¿ Quieres verificar los pedidos o la trazabilidad de las donaciones ?, haz click
+            Quieres ayudar, porfavor ingresa a este 
         </h2>
 
-        <v-row justify="center">
+        <v-row justify="center">          
+          <a
+            @click="clickMenu('DonationType')" 
+          >enlace</a>
+        </v-row>
+      </v-col>
+
+        <p class="subheading font-weight-regular" style="color:white">
+           Para los asistentes de las parroquias o lugares de donación, para acceder al sistema hagan click 
           <a
             @click="clickMenu('Login')" 
           >aqui</a>
-        </v-row>
+        </p>
       </v-col>
+
+    
 
      
 

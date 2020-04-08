@@ -91,7 +91,66 @@ export default {
           {
             val = process.env.VUE_APP_SERVER_HOST+item[header.value]
           }else{
-            val = item[header.value]
+
+            if(header.value === "state")
+            {
+              //eslint-disable-next-line
+              console.log("in state",item[header.value])
+
+              switch(item[header.value])
+              {
+                case "REGISTERED":
+
+                  val = "Registrada por atender"
+
+                  break
+
+                case "SELECTED":
+
+                  val = "Seleccionada"
+
+                  break
+
+                case "IN_DELIVER":
+
+                  val = "En proceso de entrega"
+
+                  break
+                  
+                case "SOLVED":
+
+                  val = "Solucionada"
+
+                  break
+                  
+                case "PARTIAL_SOLVED":
+
+                  val = "Parcialmente solucionada"
+
+                  break
+
+                case "DELIVERED":
+
+                  val = "En proceso de recepción"
+
+                  break
+
+                case "FINISHED":
+
+                  val = "Finalizado"
+
+                  break
+
+                default:
+                  val = item[header.value]
+                  break
+              }
+
+              
+            }else{
+              val = item[header.value]
+            }
+            
           }
           
         }
@@ -117,6 +176,10 @@ export default {
       }
       
 
+    },
+    solveStateAlias:(state) =>{
+      //eslint-disable-next-line
+      console.log("solve state alias",state)
     }
   },
   computed: {
