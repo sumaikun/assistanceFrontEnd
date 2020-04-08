@@ -23,6 +23,8 @@ import { onError } from 'apollo-link-error'
 import 'vue2-dropzone/dist/vue2Dropzone.min.css'
 
 
+console.log("env variables",process.env)
+
 Vue.use(VueSweetalert2);
 
 Vue.use(VueProgressBar);
