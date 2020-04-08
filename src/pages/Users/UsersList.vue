@@ -3,7 +3,7 @@
     <v-flex xs12>
         <v-card>
             <v-card-title>
-                <span class="title"> Usuarios {{pagination? "("+pagination.totalItems+")": ""}}
+                <span class="title"> Usuarios {{ users ? "("+users.length+")": ""}}
                     <v-text-field append-icon="search" label="Buscar" single-line hide-details ></v-text-field>
                 </span>
                 <v-spacer></v-spacer>
@@ -81,7 +81,7 @@ import {
             ];
 
             this.pagination = {}
-            this.pagination.totalItems = 0 || this.users.length;
+            //this.pagination.totalItems = 0 || this.users.length;
            
 
         },

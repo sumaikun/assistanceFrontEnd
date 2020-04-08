@@ -107,11 +107,10 @@ export default {
     },
     solverRelationShip: (item, dataSet, property) => {
       /* eslint-disable-next-line */
-      console.log(dataSet);
-
-      const result = dataSet.filter( data => data.id === item[property] )
+      console.log(dataSet);     
 
       try{
+        const result = dataSet.filter( data => data.id === item[property] )
         return result[0].name
       }catch(e){
         return ""
