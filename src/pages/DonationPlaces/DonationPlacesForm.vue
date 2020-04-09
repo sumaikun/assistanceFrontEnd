@@ -153,7 +153,9 @@
         statusValidation: [],      
         rules: {       
         },
-        donationPlace:{},
+        donationPlace:{
+          name:"",city:"",contact:"",phone:"",address:""
+        },
         cities:[],
         imagePath:process.env.VUE_APP_SERVER_HOST,        
         dropzoneOptions: {

@@ -175,6 +175,14 @@ export const ALL_NEEDS_QUERY = gql`
     }
   }`
 
+export const NEEDS_BY_DONATION_PLACE = gql`
+query needsByDonation($input: String!) {
+  needsByDonation(input:$input) {
+    id
+    
+  }
+}` 
+
 export const CREATE_NEED_MUTATION = gql`
 mutation  createNeed($input: NeedsInput!) {
   createNeed(input:$input){
