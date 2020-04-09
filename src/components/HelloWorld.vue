@@ -8,11 +8,20 @@
           contain
           height="200"
         />
-      </v-col>
+      
+        <v-img
+          style="position:absolute; width:15vw"
+          :src="require('../assets/emaus.png')"
+          class="my-3"
+          contain
+          
+        />
+      </v-col>       
+      
 
       <v-col class="mb-4">
         <h1 class="display-2 font-weight-bold mb-3">
-          ¡ Bienvenido a solidaridad Emáus !
+          ¡ Bienvenido a solidaridad Emaús !
         </h1>
 
       <v-col
@@ -38,6 +47,16 @@
         </p>
       </v-col>
 
+
+      <v-col cols="12">
+        <div style="float: right;">
+          <span style="color:white" >Powered By</span>
+          <img
+            :src="require('../assets/apes.png')"
+            style="width:40%"
+          />
+        </div>
+      </v-col>
     
 
      
