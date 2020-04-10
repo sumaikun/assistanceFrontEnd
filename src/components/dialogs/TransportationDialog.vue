@@ -10,6 +10,7 @@
                 <v-col cols="12" sm="12" md="12">
                   <v-text-field label="Número de transacción *" 
                   v-model="transportation.transactionNumber"
+                  :disabled="donation  && donation.state != 'REGISTERED' && donation && donation.state != 'DELIVERED' "
                    required>
                   </v-text-field>
                 </v-col>
@@ -19,7 +20,8 @@
                     item-value="id"
                     :items="transporters"
                     label="Transportador"
-                    v-model="transportation.transporter"               
+                    v-model="transportation.transporter"
+                    :disabled="donation  && donation.state != 'REGISTERED' && donation && donation.state != 'DELIVERED' "               
                   ></v-autocomplete>
                 </v-col>
                 <v-col cols="12" sm="12" md="12" v-if=" donation  && donation.need === null ">
@@ -32,7 +34,10 @@
           <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn color="blue darken-1" text @click.native="$emit('close')">Cerrar</v-btn>
-            <v-btn color="blue darken-1" text @click.native="$emit('save')">Guardar</v-btn>
+            <v-btn 
+              v-if=" donation  && donation.state === 'REGISTERED' || donation && donation.state === 'DELIVERED'   "
+            color="blue darken-1" text @click.native="$emit('save')">Guardar</v-btn>
+          
           </v-card-actions>
         </v-card>
       </v-dialog>
