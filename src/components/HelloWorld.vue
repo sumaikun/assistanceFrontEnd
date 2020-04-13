@@ -8,20 +8,21 @@
           contain
           height="200"
         />
-      
+
+        <!--
         <v-img
           style="position:absolute; width:15vw"
           :src="require('../assets/emaus.png')"
           class="my-3"
           contain
           
-        />
+        />-->
       </v-col>       
       
 
       <v-col class="mb-4">
         <h1 class="display-2 font-weight-bold mb-3">
-          ¡ Bienvenido a solidaridad Emaús !
+          ¡ Bienvenido a solidaridad 4 all !
         </h1>
 
       <v-col
