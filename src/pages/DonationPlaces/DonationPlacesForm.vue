@@ -162,7 +162,7 @@
             url: FileUrl,
             headers: { "Authorization": "Bearer "+token },
             thumbnailWidth: 150,
-            maxFilesize: 3,
+            maxFilesize: 15,
             maxFiles: 1,
             addRemoveLinks: true,
             autoProcessQueue: false           
