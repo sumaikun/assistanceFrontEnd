@@ -36,13 +36,8 @@
 </template>
 <script>
     export default{        
-        computed: {
-            isFetching(){
-                /* eslint-disable-next-line */
-                //console.log("computed in fetching",this.$store.state.app)
-                //return ( this.$store.state.app.loading )
-                return false 
-            }
+        props:{
+          isFetching:Boolean        
         }
     }
 </script>

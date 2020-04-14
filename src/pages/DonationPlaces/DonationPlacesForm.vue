@@ -225,7 +225,10 @@
             }
             else{
 
-              this.donationPlace.picture = ""
+              if(!this.donationPlace.picture)
+              {
+                this.donationPlace.picture = ""  
+              }              
           
               if(this.donationPlace.id)
               {

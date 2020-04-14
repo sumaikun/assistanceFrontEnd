@@ -151,49 +151,53 @@ import {
                 console.log(item);
                 this.idToSearch = item.id
                 this.$apollo.queries.needsByDonation.skip = false
-                this.$apollo.queries.needsByDonation.refetch()
-                if(this.needsByDonation.length > 0)
-                {
-                     this.$swal({icon:'warning',title: '!No puede eliminarse un lugar de donación que ya tiene necesidades asociadas!'})
-                }else{
-                    //eslint-disable-next-line
-                    console.log("time to delete")
+                this.$apollo.queries.needsByDonation.refetch().then( result => {
+                    console.log("result of queries",result)
 
-                    this.$swal({
-                    title: '¿Estas seguro?',
-                    text: "¡No posdrás revertir este proceso!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Si, adelante!',
-                    cancelButtonText: 'Cancelar'
-                    }).then((result) => {
-                        if (result.value) {
-                            //eslint-disable-next-line
-                            console.log("time to delete")
-                             this.$apollo
-                            .mutate({
-                                mutation: DELETE_DONATIONPLACE_MUTATION,
-                                variables: {
-                                    input: item.id                 
-                                }
-                            })
-                            .then(response => {
+                    if(this.needsByDonation.length > 0)
+                    {
+                        this.$swal({icon:'warning',title: '!No puede eliminarse un lugar de donación que ya tiene necesidades asociadas!'})
+                    }else{
+                        //eslint-disable-next-line
+                        console.log("time to delete")
+
+                        this.$swal({
+                        title: '¿Estas seguro?',
+                        text: "¡No posdrás revertir este proceso!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Si, adelante!',
+                        cancelButtonText: 'Cancelar'
+                        }).then((result) => {
+                            if (result.value) {
                                 //eslint-disable-next-line
-                                console.log("deleted",response)
-                                this.$apollo.queries.donationPlaces.refetch()        
-                                this.$swal({icon:'success',title: '!Datos eliminados!'})
-                            })
-                            .catch(error =>{
-                                //eslint-disable-next-line
-                                console.error("deleted",error)
-                                this.$swal({icon:'error',title: '!Hay error en la conexión con el servidor!'})
-                            })
-                            
-                        }                   
-                    })
-                }
+                                console.log("time to delete")
+                                this.$apollo
+                                .mutate({
+                                    mutation: DELETE_DONATIONPLACE_MUTATION,
+                                    variables: {
+                                        input: item.id                 
+                                    }
+                                })
+                                .then(response => {
+                                    //eslint-disable-next-line
+                                    console.log("deleted",response)
+                                    this.$apollo.queries.donationPlaces.refetch()        
+                                    this.$swal({icon:'success',title: '!Datos eliminados!'})
+                                })
+                                .catch(error =>{
+                                    //eslint-disable-next-line
+                                    console.error("deleted",error)
+                                    this.$swal({icon:'error',title: '!Hay error en la conexión con el servidor!'})
+                                })
+                                
+                            }                   
+                        })
+                    }
+                })
+                
                 
             },
             selectedImage(data){
